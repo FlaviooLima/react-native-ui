@@ -8,21 +8,29 @@ Buttons can be used to interact with the screen. It takes the following props.
 
 
 ```js
-import { Button } from 'react-native-elements';
-import { Text } from 'react-native';
+   import { Button } from 'react-native-elements';
+   import { Text } from 'react-native';
 
-<Button>
-   <Text>Ok!</Text>
-</Button>
+   <Button
+      onPress={() => alert('Hey you!!')}
+      title="Login"
+      disabled={false}
+      containerStyle={{ backgroundColor: 'gray', borderRadius: 0 }}
+   />
+
+   <Button touchableProps={{ disabled: true }}>
+      <Text>Test2</Text>   
+   </Button>
+
+   <Button clean>
+      <Text>Test3</Text>
+   </Button>
 
 ```
 
 ---
 
 ### Props
-
-> Also receives all [TouchableNativeFeedback](http://facebook.github.io/react-native/docs/touchablenativefeedback.html#props) (Android) or [TouchableOpacity](http://facebook.github.io/react-native/docs/touchableopacity.html#props) (iOS) props
-
 * [`onPress`](#onPress)
 * [`disabled`](#disabled)
 * [`testID`](#testID)
@@ -71,6 +79,7 @@ add additional styling for title component. (optional)
 ### `touchableProps`
 
 Add additional props to the touchable component. (optional)
+> Receives all [TouchableNativeFeedback](http://facebook.github.io/react-native/docs/touchablenativefeedback.html#props) (Android) or [TouchableOpacity](http://facebook.github.io/react-native/docs/touchableopacity.html#props) (iOS) props
 
 |        Type         | Default |
 | :-----------------: | :-----: |

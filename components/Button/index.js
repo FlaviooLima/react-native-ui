@@ -15,6 +15,8 @@ import {
 
 export default class Button extends React.PureComponent {
   render() {
+    const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+
     const {
       onPress,
       disabled,
@@ -29,7 +31,6 @@ export default class Button extends React.PureComponent {
       children
     } = this.props;
 
-    const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
 
     const Children = children ?
       children
@@ -37,14 +38,13 @@ export default class Button extends React.PureComponent {
       [
         ...((iconLeft) && [iconLeft] || [null]),
 
-        <Text key="1" style={titleStyle || styles.title}>{title}</Text>,
+        <Text key="1" style={(!clean) && [styles.title, titleStyle]}>{title}</Text>,
 
         ...((iconRight) && [iconRight] || [null]),
       ]
 
     return (
       <Touchable onPress={onPress} disabled={disabled || false} testID={testID} {...touchableProps}>
-        {/* <View style={(!clean) && (containerStyle || styles.container)}> */}
         <View style={(!clean) && [styles.container, containerStyle]}>
           {Children}
         </View>
