@@ -25,7 +25,7 @@ import { Button } from 'react-native-elements';
 
 ## Components included:
 
-* [x] [Button](https://github.com/FlaviooLima/react-native-ui/docs/button.md)
+* [x] [Button](docs/button.md)
 
 
 
