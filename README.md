@@ -16,7 +16,7 @@ Just run this `npm i react-native-ui --save`
 Start using the components.
 
 ```js
-import { Button } from 'react-native-elements';
+import { Button } from 'react-native-ui';
 
 <Button />;
 ```
